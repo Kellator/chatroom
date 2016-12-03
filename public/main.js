@@ -3,6 +3,7 @@ $(document).ready(function() {
     var input = $('input');
     var messages = $('#messages');
 
+
     var addMessage = function(message) {
         messages.append('<div>' + message + '</div>');
     };
