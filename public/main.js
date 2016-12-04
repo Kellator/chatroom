@@ -3,7 +3,7 @@ $(document).ready(function() {
     var input = $('input');
     var messages = $('#messages');
 
-
+    //function for adding user message
     var addMessage = function(message) {
         messages.append('<div>' + message + '</div>');
     };
@@ -20,3 +20,10 @@ $(document).ready(function() {
     });
     socket.on('message', addMessage);
 });
+
+//log in page?
+//chat page?
+//function to store user id at login?
+//function to notify of added user
+//function to notify of left user
+
