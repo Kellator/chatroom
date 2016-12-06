@@ -1,11 +1,30 @@
 <!doctype html>
-<title>Chatroom</title>
-<meta charset="utf-8">
+
 
 <!-- JS -->
 <script src="//code.jquery.com/jquery-2.1.0.js"></script>
 <script src="main.js"></script> 
 <script src="/socket.io/socket.io.js"></script>
-
-<input type="text">
-<div id="messages"></div>
+<html>
+    <head>
+        <title>Chatroom</title>
+        <meta charset="utf-8">
+        <link rel='stylesheet' href='main.css'>
+    </head>
+<body>
+    <header><h1>TalkSpace: Thinkful Chatroom</h1></header>
+    <ul class='pages'>
+        <li id='chatroom' class='chat_room hidden'>
+            <div class='chat'>
+                <input type="text">
+                <div id="messages"></div>
+            </div>
+        </li>
+        <li id='loginPage' class='login_page'>
+            <div class='form'>
+                <input class='userName' type='text' />
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+.hidden {
+    display: none;
+}
+ul {
+    list-style: none;
+    word-wrap: break-word;
+}
