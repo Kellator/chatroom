@@ -2,7 +2,7 @@ $(document).ready(function() {
     var socket = io();
     var input = $('input');
     var messages = $('#messages');
-    var userNameInput = $('.userName');
+    var $userNameInput = $('.userName');
     var userName;
     
 
@@ -28,12 +28,18 @@ $(document).ready(function() {
             setUsername();
         };
     });
-    //gathers user name input from user
+    //
     function setUsername() {
         userName = $userNameInput.val().trim();
-        $('#loginPage').hide();
-        $('#chatroom').show();
-        socket.emit('addUser', userName);
+        if (userName) {
+            $('#loginPage').hide();
+            $('#chatroom').show();
+            $('loginPage').off('click');
+            socket.emit('addUser', userName);
+            console.log(userName);
+        }
+
+
     };
     //displays connected username
     socket.on('login', function(data){

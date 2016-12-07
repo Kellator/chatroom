@@ -23,6 +23,7 @@ io.on('connection', function (socket) {
     socket.on('addUser', function(user) {
         socket.userName = user;
         users[user] = user;
+        console.log(user);
         ++userCount;
         addedUser = true;
         socket.broadcast.emit('login', {
@@ -46,7 +47,7 @@ io.on('connection', function (socket) {
             user: socket.userName,
             userCount: userCount
         });
-        console.log('disconnect: ', socket.username);
+        console.log('disconnect: ', socket.userName);
     });
 
 });
