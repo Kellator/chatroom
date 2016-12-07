@@ -28,7 +28,7 @@ $(document).ready(function() {
             setUsername();
         };
     });
-    //
+    //shows login page, sets username to be used in chat space then moves user to chatroom
     function setUsername() {
         userName = $userNameInput.val().trim();
         if (userName) {
@@ -38,16 +38,14 @@ $(document).ready(function() {
             socket.emit('addUser', userName);
             console.log(userName);
         }
-
-
     };
-    //displays connected username
+    //displays connected username and how many users are in chat
     socket.on('login', function(data){
       var msg ='<br/><small>' + data.user + ' has connected</small><br /> There are ' + data.userCount + ' users connected';
       console.log('In login: ',data);
       messages.append(msg);
     });
-
+    //displays message when a user has disconnected - showing who has left and how many users remain.
     socket.on('userDisconnect', function(data){
       var msg ='<small>' + data.user + ' has disconnected<br /> There are ' + data.userCount + ' users connected</small><br/>';
       if (data.userCount > 0) {
@@ -56,9 +54,5 @@ $(document).ready(function() {
     });
     socket.on('message', addMessage);
 });
-//log in page?
-//chat page?
-//function to store user id at login?
-//function to notify of added user
-//function to notify of left user
+
 

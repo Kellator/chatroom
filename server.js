@@ -49,7 +49,6 @@ io.on('connection', function (socket) {
         });
         console.log('disconnect: ', socket.userName);
     });
-
 });
 
 server.listen(process.env.PORT || 8080);
